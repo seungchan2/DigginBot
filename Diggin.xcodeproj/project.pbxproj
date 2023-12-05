@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC2332CD2B1E32A50099A5BF /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2332CC2B1E32A50099A5BF /* CustomTabBarView.swift */; };
 		EC6B74FC2B1B045C000D1FAA /* BorderedCaption.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B74FB2B1B045C000D1FAA /* BorderedCaption.swift */; };
 		EC6B74FE2B1B7814000D1FAA /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B74FD2B1B7814000D1FAA /* ToastView.swift */; };
 		EC6B75002B1DAFC3000D1FAA /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B74FF2B1DAFC2000D1FAA /* ChatView.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC2332CC2B1E32A50099A5BF /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		EC6B74FB2B1B045C000D1FAA /* BorderedCaption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedCaption.swift; sourceTree = "<group>"; };
 		EC6B74FD2B1B7814000D1FAA /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		EC6B74FF2B1DAFC2000D1FAA /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				EC6F46452B18B1F0005A8176 /* Tab */,
 				ECCCE6CB2B1E281D00310D1D /* Chat */,
 				EC6F46272B1891D6005A8176 /* Onboarding */,
+				EC2332CC2B1E32A50099A5BF /* CustomTabBarView.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				EC6B750C2B1DC563000D1FAA /* ChatObject.swift in Sources */,
 				ECCCE6D92B1E29D100310D1D /* ChatData.swift in Sources */,
 				EC6B750F2B1DC615000D1FAA /* ChatDBRepository.swift in Sources */,
+				EC2332CD2B1E32A50099A5BF /* CustomTabBarView.swift in Sources */,
 				EC6B75092B1DBE19000D1FAA /* KeyboardToolbar.swift in Sources */,
 				EC6F46492B18B235005A8176 /* TabViewModel.swift in Sources */,
 				EC6B74FC2B1B045C000D1FAA /* BorderedCaption.swift in Sources */,
