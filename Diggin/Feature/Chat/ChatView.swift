@@ -13,47 +13,17 @@ struct ChatView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("오늘의 음악 추천")
-                .font(.suitB(25))
-                .padding(.leading, 20)
-                .foregroundColor(.white)
             
             Text("DigginBot에게 추천받아보세요!")
-                .font(.suitSB(15))
+                .font(.suitB(17))
                 .padding(.leading, 20)
                 .foregroundColor(.gray)
-                .padding(.top, 0)
             
             ScrollView {
                 contentView
             }
             .background(.black)
             .navigationBarBackButtonHidden()
-        }
-        .keyboardToolbar(height: 50) {
-            HStack {
-                TextField("", text: $viewModel.message)
-                    .font(.system(size: 14))
-                    .foregroundColor(.white)
-                    .focused($isFocused)
-                    .padding(.vertical, 8)
-                    .padding(.horizontal, 10)
-                    .background(Color.black)
-                    .cornerRadius(10)
-                    .padding(.leading, 20)
-
-                Button {
-                    viewModel.send(action: .addChat(message: viewModel.message))
-                    isFocused = false
-                } label: {
-                    Image("search")
-                        .resizable()
-                        .frame(width: 35, height: 35)
-                        .tint(Color.white)
-                }
-                .padding(.trailing, 20)
-                .disabled(viewModel.message.isEmpty)
-            }
         }
         .background(Color.blackSub)
     }
