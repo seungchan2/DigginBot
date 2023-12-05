@@ -12,7 +12,7 @@ struct DigginApp: App {
     var body: some Scene {
         WindowGroup {
             if UserDefaults.standard.bool(forKey: "appStart") {
-                ChatView(viewModel: ChatViewModel(repository: ChatDBRepository()))
+                CustomTabBarView()
             } else {
                 OnboardingView()
             }
