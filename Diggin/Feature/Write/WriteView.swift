@@ -38,20 +38,20 @@ struct WriteView: View {
                         .scaledToFill()
                         .frame(width: 120, height: 120)
                         .clipped()
-                        .padding(.top, 50)
+                        .padding(.top, 30)
                 } else {
-                    Image("Avatar")
+                    Image("Logo")
                         .resizable()
                         .frame(width: 120, height: 120)
-                        .padding(.top, 50)
+                        .padding(.top, 30)
                 }
             }
             
             HStack {
-                Text("아티스트")
+                Text("오늘의 음악")
                     .foregroundColor(.white)
                     .font(.suitB(16))
-                TextField("", text: $viewModel.artistText)
+                TextField("", text: $viewModel.titleText)
                     .font(.system(size: 14))
                     .foregroundColor(.white)
                     .focused($isFocused)
@@ -65,11 +65,11 @@ struct WriteView: View {
             .padding(.leading, 20)
             
             HStack {
-                Text("오늘의 기분")
+                Text("아티스트")
                     .foregroundColor(.white)
                     .font(.suitB(16))
                 
-                TextField("", text: $viewModel.titleText)
+                TextField("", text: $viewModel.artistText)
                     .font(.system(size: 14))
                     .foregroundColor(.white)
                     .focused($isFocused)
@@ -84,20 +84,20 @@ struct WriteView: View {
             .padding(.leading, 20)
             
             VStack(alignment: .leading) {
-                Text("한줄일기")
+                Text("한 줄 일기")
                     .font(.suitB(16))
                     .foregroundColor(.white)
                     .padding(.top, 8)
                 
-                CustomTextEditor(placeholder: "입력", text: $viewModel.contentText)
+                CustomTextEditor(placeholder: "무슨 말을 하고 싶나요?", text: $viewModel.contentText)
                     .font(.system(size: 14))
                     .scrollContentBackground(.hidden)
                     .foregroundColor(.white)
                     .background(Color.black)
                     .focused($isFocused)
                     .padding(.vertical, 8)
-                    .cornerRadius(10)
                     .padding(.trailing, 20)
+                    .frame(height: 200)
             }
             .padding(.leading, 20)
             
@@ -115,7 +115,6 @@ struct WriteView_Previews: PreviewProvider {
     }
 }
 
-
 struct CustomTextEditor: View {
     let placeholder: String
     @Binding var text: String
@@ -131,7 +130,13 @@ struct CustomTextEditor: View {
             }
             TextEditor(text: $text)
                 .padding(internalPadding)
-        }.onAppear() {
+                .cornerRadius(10)
+        }
+        .overlay(
+                 RoundedRectangle(cornerRadius: 10)
+                   .stroke(Color.black, lineWidth: 3)
+                 )
+        .onAppear() {
             UITextView.appearance().backgroundColor = .clear
         }.onDisappear() {
             UITextView.appearance().backgroundColor = nil
