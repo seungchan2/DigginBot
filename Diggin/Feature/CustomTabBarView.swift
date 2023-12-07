@@ -13,16 +13,17 @@ enum tapInfo : String, CaseIterable {
 }
 
 struct CustomTabBarView: View {
-
     @State private var selectedPicker: tapInfo = .recommend
     @Namespace private var animation
     
     var body: some View {
-        VStack {
-            animate()
-            MakeTopTabBar(tap: selectedPicker, viewModel: ChatViewModel(repository: ChatDBRepository()))
+        NavigationView {
+            VStack {
+                animate()
+                MakeTopTabBar(tap: selectedPicker, viewModel: ChatViewModel(repository: ChatDBRepository()))
+            }
+            .background(Color.blackSub.edgesIgnoringSafeArea(.all))
         }
-        .background(Color.blackSub)
     }
     
     @ViewBuilder
@@ -35,15 +36,15 @@ struct CustomTabBarView: View {
                         .foregroundColor(Color.white)
                         .frame(maxWidth: .infinity / 4, minHeight: 50)
                         .foregroundColor(selectedPicker == item ? .white : .gray)
-
+                    
                     if selectedPicker == item {
                         Capsule()
                             .foregroundColor(.white)
                             .frame(height: 3)
                             .matchedGeometryEffect(id: "diggin", in: animation)
                     }
-                    
                 }
+                .frame(height: 50)
                 .onTapGesture {
                     withAnimation(.easeInOut) {
                         self.selectedPicker = item
@@ -62,39 +63,58 @@ struct MakeTopTabBar: View {
     @FocusState var isFocused: Bool
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            switch tap {
-            case .recommend:
-                ChatView(viewModel: viewModel)
-                    .keyboardToolbar(height: 50) {
-                        HStack {
-                            TextField("", text: $viewModel.message)
-                                .font(.system(size: 14))
-                                .foregroundColor(.white)
-                                .focused($isFocused)
-                                .padding(.vertical, 8)
-                                .padding(.horizontal, 10)
-                                .background(Color.black)
-                                .cornerRadius(10)
-                                .padding(.leading, 20)
-
-                            Button {
-                                viewModel.send(action: .addChat(message: viewModel.message))
-                                isFocused = false
-                            } label: {
-                                Image("search")
-                                    .resizable()
-                                    .frame(width: 35, height: 35)
-                                    .tint(Color.white)
-                            }
-                            .padding(.trailing, 20)
-                            .disabled(viewModel.message.isEmpty)
+        switch tap {
+        case .recommend:
+            ChatView(viewModel: viewModel)
+                .keyboardToolbar(height: 50) {
+                    HStack {
+                        TextField("", text: $viewModel.message)
+                            .font(.system(size: 14))
+                            .foregroundColor(.white)
+                            .focused($isFocused)
+                            .padding(.vertical, 8)
+                            .padding(.horizontal, 10)
+                            .background(Color.black)
+                            .cornerRadius(10)
+                            .padding(.leading, 20)
+                        
+                        Button {
+                            viewModel.send(action: .addChat(message: viewModel.message))
+                            isFocused = false
+                        } label: {
+                             Image("paper-plane")
+                                .resizable()
+                                .frame(width: 35, height: 35)
+                                .tint(Color.white)
                         }
+                        .padding(.trailing, 20)
+                        .disabled(viewModel.message.isEmpty)
                     }
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 150 )
-                    .background(Color.blackSub)
-            case .list:
-                Text("List")
+                }
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 150 )
+                .background(Color.blackSub)
+            Spacer()
+
+        case .list:
+            ZStack {
+                MusicListView(viewModel: MusicListViewModel(repository: WriteDBRepository()))
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        NavigationLink(destination: WriteView(viewModel: WriteViewModel(repository: WriteDBRepository()))) {
+                            Image(systemName: "plus")
+                                .renderingMode(.template)
+                                .foregroundColor(Color.stemGreen)
+                                .frame(width: 28, height: 28)
+                                .padding()
+                        }
+                        .background(Color.gray)
+                        .foregroundColor(Color.stemGreen)
+                        .clipShape(Circle())
+                        .padding()
+                    }
+                }
             }
         }
     }
