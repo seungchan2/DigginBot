@@ -44,6 +44,7 @@
 		EC6F464B2B18B2A7005A8176 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6F464A2B18B2A7005A8176 /* HomeTabView.swift */; };
 		EC6F465D2B18FB19005A8176 /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EC6F465C2B18FB19005A8176 /* ChatGPTSwift */; };
 		ECBF851A2B21DD3C00D7C85D /* CustomTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBF85192B21DD3C00D7C85D /* CustomTextEditor.swift */; };
+		ECBF851E2B21E8DE00D7C85D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBF851D2B21E8DE00D7C85D /* Launch Screen.storyboard */; };
 		ECCCE6AD2B1E12D900310D1D /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECCCE6AC2B1E12D900310D1D /* Color.xcassets */; };
 		ECCCE6AF2B1E130200310D1D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCCE6AE2B1E130200310D1D /* Color.swift */; };
 		ECCCE6BA2B1E1DE300310D1D /* SUIT-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = ECCCE6B12B1E1DE300310D1D /* SUIT-Bold.otf */; };
@@ -119,6 +120,7 @@
 		EC6F46482B18B235005A8176 /* TabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewModel.swift; sourceTree = "<group>"; };
 		EC6F464A2B18B2A7005A8176 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		ECBF85192B21DD3C00D7C85D /* CustomTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEditor.swift; sourceTree = "<group>"; };
+		ECBF851D2B21E8DE00D7C85D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		ECCCE6AC2B1E12D900310D1D /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		ECCCE6AE2B1E130200310D1D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		ECCCE6B12B1E1DE300310D1D /* SUIT-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Bold.otf"; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 				EC6F45FA2B18909E005A8176 /* Assets.xcassets */,
 				ECCCE6C42B1E1E3100310D1D /* Font.swift */,
 				ECCCE6AC2B1E12D900310D1D /* Color.xcassets */,
+				ECBF851D2B21E8DE00D7C85D /* Launch Screen.storyboard */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				EC6F45FE2B18909E005A8176 /* Preview Assets.xcassets in Resources */,
 				EC6F45FB2B18909E005A8176 /* Assets.xcassets in Resources */,
 				ECCCE6C12B1E1DE300310D1D /* SUIT-Regular.otf in Resources */,
+				ECBF851E2B21E8DE00D7C85D /* Launch Screen.storyboard in Resources */,
 				ECCCE6C22B1E1DE300310D1D /* SUIT-ExtraLight.otf in Resources */,
 				ECCCE6C02B1E1DE300310D1D /* SUIT-SemiBold.otf in Resources */,
 				ECCCE6BB2B1E1DE300310D1D /* SUIT-Medium.otf in Resources */,
@@ -785,6 +789,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -816,6 +821,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
