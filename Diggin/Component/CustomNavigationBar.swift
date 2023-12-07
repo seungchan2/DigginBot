@@ -44,9 +44,7 @@ struct CustomNavigationBar: View {
             
             Button(
                 action: {
-                    if isRightButtonEnabled {
-                        rightButtonAction()
-                    }
+                    rightButtonAction()
                 } ,
                 label: {
                     Text("완료")
@@ -54,7 +52,6 @@ struct CustomNavigationBar: View {
                 }
             )
             .foregroundColor(isRightButtonEnabled ? .white : .gray)
-            .disabled(!isRightButtonEnabled)
         }
         .padding(.horizontal)
         .frame(width: UIScreen.main.bounds.width, height: 50)
