@@ -20,8 +20,9 @@ struct ToastView<Content: View>: View {
         ZStack(alignment: .center) {
             content
                 .padding()
-                .background(Color.gray)
-                .foregroundColor(Color.primary)
+                .background(Color.black)
+                .foregroundColor(Color.stemGreen)
+                .font(.suitSB(13))
                 .cornerRadius(10)
                 .opacity(isShowing.wrappedValue ? 1.0 : 0.0)
                 .scaleEffect(isShowing.wrappedValue ? 1.0 : 0.5)
@@ -33,25 +34,6 @@ struct ToastView<Content: View>: View {
                 isShowing.wrappedValue.toggle()
             }
         }
-    }
-}
-
-struct ContentView: View {
-    @State private var showToast: Bool = false
-
-    var body: some View {
-        ZStack {
-            VStack {
-                Button("Show Toast") {
-                    showToast.toggle()
-                }
-            }
-            .toast(isShowing: $showToast) {
-                Text("This is a toast message.")
-            }
-        }
-        .padding()
-
     }
 }
 
