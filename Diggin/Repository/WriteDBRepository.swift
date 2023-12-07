@@ -28,12 +28,8 @@ final class WriteDBRepository: WriteDBRepositoryType {
                     self.localRealm.add(object)
                 }
                 promise(.success(()))
-                print("add")
-
-                print(Realm.Configuration.defaultConfiguration.fileURL!)
             } catch {
-                print("err''")
-                promise(.failure(DBError.dbError))
+                print("err")
             }
         }
         .eraseToAnyPublisher()
@@ -50,8 +46,6 @@ final class WriteDBRepository: WriteDBRepositoryType {
                 }
             } receiveValue: { results in
                 subject.send(Array(results))
-                print("observe")
-                print(Realm.Configuration.defaultConfiguration.fileURL!)
             }
         
         subscription.insert(AnyCancellable {
