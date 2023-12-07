@@ -44,7 +44,6 @@ struct CustomTabBarView: View {
                             .matchedGeometryEffect(id: "diggin", in: animation)
                     }
                 }
-                .frame(height: 50)
                 .onTapGesture {
                     withAnimation(.easeInOut) {
                         self.selectedPicker = item
@@ -65,35 +64,37 @@ struct MakeTopTabBar: View {
     var body: some View {
         switch tap {
         case .recommend:
-            ChatView(viewModel: viewModel)
-                .keyboardToolbar(height: 50) {
-                    HStack {
-                        TextField("", text: $viewModel.message)
-                            .font(.system(size: 14))
-                            .foregroundColor(.white)
-                            .focused($isFocused)
-                            .padding(.vertical, 8)
-                            .padding(.horizontal, 10)
-                            .background(Color.black)
-                            .cornerRadius(10)
-                            .padding(.leading, 20)
-                        
-                        Button {
-                            viewModel.send(action: .addChat(message: viewModel.message))
-                            isFocused = false
-                        } label: {
-                             Image("paper-plane")
-                                .resizable()
-                                .frame(width: 35, height: 35)
-                                .tint(Color.white)
+            VStack {
+                ChatView(viewModel: viewModel)
+                    .keyboardToolbar(height: 50) {
+                        HStack {
+                            TextField("", text: $viewModel.message)
+                                .font(.system(size: 14))
+                                .foregroundColor(.white)
+                                .focused($isFocused)
+                                .padding(.vertical, 8)
+                                .padding(.horizontal, 10)
+                                .background(Color.black)
+                                .cornerRadius(10)
+                                .padding(.leading, 20)
+                            
+                            Button {
+                                viewModel.send(action: .addChat(message: viewModel.message))
+                                isFocused = false
+                            } label: {
+                                Image("paper-plane")
+                                    .resizable()
+                                    .frame(width: 35, height: 35)
+                                    .tint(Color.white)
+                            }
+                            .padding(.trailing, 20)
+                            .disabled(viewModel.message.isEmpty)
                         }
-                        .padding(.trailing, 20)
-                        .disabled(viewModel.message.isEmpty)
                     }
-                }
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 150 )
-                .background(Color.blackSub)
-            Spacer()
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.8)
+                    .background(Color.blackSub)
+                Spacer()
+            }
 
         case .list:
             ZStack {
