@@ -14,6 +14,7 @@
 		EC2332D72B2097250099A5BF /* WriteObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2332D62B2097250099A5BF /* WriteObject.swift */; };
 		EC2332D92B20977E0099A5BF /* WriteDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2332D82B20977E0099A5BF /* WriteDBRepository.swift */; };
 		EC2332DB2B2099D10099A5BF /* MusicListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2332DA2B2099D10099A5BF /* MusicListViewModel.swift */; };
+		EC2332E32B219F520099A5BF /* PhotoPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2332E22B219F520099A5BF /* PhotoPickerService.swift */; };
 		EC6B74FC2B1B045C000D1FAA /* BorderedCaption.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B74FB2B1B045C000D1FAA /* BorderedCaption.swift */; };
 		EC6B74FE2B1B7814000D1FAA /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B74FD2B1B7814000D1FAA /* ToastView.swift */; };
 		EC6B75002B1DAFC3000D1FAA /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B74FF2B1DAFC2000D1FAA /* ChatView.swift */; };
@@ -87,6 +88,7 @@
 		EC2332D62B2097250099A5BF /* WriteObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteObject.swift; sourceTree = "<group>"; };
 		EC2332D82B20977E0099A5BF /* WriteDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDBRepository.swift; sourceTree = "<group>"; };
 		EC2332DA2B2099D10099A5BF /* MusicListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListViewModel.swift; sourceTree = "<group>"; };
+		EC2332E22B219F520099A5BF /* PhotoPickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerService.swift; sourceTree = "<group>"; };
 		EC6B74FB2B1B045C000D1FAA /* BorderedCaption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedCaption.swift; sourceTree = "<group>"; };
 		EC6B74FD2B1B7814000D1FAA /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		EC6B74FF2B1DAFC2000D1FAA /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			children = (
 				EC6B750E2B1DC615000D1FAA /* ChatDBRepository.swift */,
 				EC2332D82B20977E0099A5BF /* WriteDBRepository.swift */,
+				EC2332E22B219F520099A5BF /* PhotoPickerService.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				ECCCE6C52B1E1E3100310D1D /* Font.swift in Sources */,
 				EC6F46442B18A97C005A8176 /* MusicList.swift in Sources */,
 				EC6F45F72B18909D005A8176 /* DigginApp.swift in Sources */,
+				EC2332E32B219F520099A5BF /* PhotoPickerService.swift in Sources */,
 				EC6F46472B18B1FC005A8176 /* Tab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
