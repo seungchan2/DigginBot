@@ -13,17 +13,27 @@ struct ChatView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            
-            Text("DigginBot에게 추천받아보세요!")
+            Text("DigginBot에게 음악 추천 받아보세요!")
                 .font(.suitB(17))
                 .padding(.leading, 20)
+                .padding(.top, 10)
                 .foregroundColor(.gray)
             
-            ScrollView {
-                contentView
+            if viewModel.chatDataList.isEmpty {
+                ScrollView {
+                    VStack(alignment: .center) {
+                        emptyView
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center)
+                }
+            } else {
+                ScrollView {
+                    contentView
+                }
+                .background(.black)
+                .navigationBarBackButtonHidden()
             }
-            .background(.black)
-            .navigationBarBackButtonHidden()
+            
         }
         .background(Color.blackSub)
     }
@@ -40,6 +50,11 @@ struct ChatView: View {
         }
     }
     
+    var emptyView: some View {
+        Text("현재는 비어있어요 ㅠ.ㅠ")
+            .foregroundColor(.white)
+    }
+    
     func headerView(dateStr: String) -> some View {
         ZStack {
             Rectangle()
@@ -47,6 +62,7 @@ struct ChatView: View {
                 .background(Color.black)
                 .cornerRadius(10)
             Text(dateStr)
+                .padding(.top, 10)
                 .font(.suitB(15))
                 .foregroundColor(Color.white)
         }
