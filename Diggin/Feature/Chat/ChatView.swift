@@ -16,7 +16,6 @@ struct ChatView: View {
             Text("DigginBot에게 음악 추천 받아보세요!")
                 .font(.suitB(17))
                 .padding(.leading, 20)
-                .padding(.top, 10)
                 .foregroundColor(.gray)
             
             if viewModel.chatDataList.isEmpty {
@@ -51,7 +50,7 @@ struct ChatView: View {
     }
     
     var emptyView: some View {
-        Text("현재는 비어있어요 ㅠ.ㅠ")
+        Text("대화를 시작해주세요 ㅠ.ㅠ")
             .foregroundColor(.white)
     }
     
