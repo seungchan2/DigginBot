@@ -8,52 +8,57 @@
 import SwiftUI
 
 struct CustomNavigationBar: View {
-    let isDisplayLeftButton: Bool
-    let isDisplayRightButton: Bool
     let leftButtonAction: () -> Void
     let rightButtonAction: () -> Void
-    let rightButtonType: NavigationButtonType
+    let isRightButtonEnabled: Bool
     
     init(
-        isDisplayLeftButton: Bool = true,
-        isDisplayRightButton: Bool = true ,
         leftButtonAction: @escaping () -> Void = {},
         rightButtonAction: @escaping () -> Void = {},
-        rightButtonType: NavigationButtonType = .edit
+        isRightButtonEnabled: Bool = false
     ) {
-        self.isDisplayLeftButton = isDisplayLeftButton
-        self.isDisplayRightButton = isDisplayRightButton
         self.leftButtonAction = leftButtonAction
         self.rightButtonAction = rightButtonAction
-        self.rightButtonType = rightButtonType
+        self.isRightButtonEnabled = isRightButtonEnabled
     }
     
     var body: some View {
         HStack {
-            if isDisplayLeftButton {
-                Button(
+            Button(
                 action: leftButtonAction,
-                label: { Image("leftArrow") }
-                )
-            }
-            
-        Spacer()
-            
-            if isDisplayRightButton {
-                Button(
-                action: rightButtonAction,
                 label: {
-                    if rightButtonType == .close {
-                        Image("close")
-                    } else {
-                        Text(rightButtonType.rawValue)
-                            .foregroundColor(.black)
+                    Image(systemName: "chevron.left")
+                        .imageScale(.medium)
+                }
+            )
+            .foregroundColor(.white)
+            .frame(width: 40, height: 40)
+            
+            Spacer()
+            
+            Text("글 작성하기")
+                .foregroundColor(.white)
+                .font(.suitB(18))
+            
+            Spacer()
+            
+            Button(
+                action: {
+                    if isRightButtonEnabled {
+                        rightButtonAction()
                     }
-                })
-            }
+                } ,
+                label: {
+                    Text("완료")
+                        .foregroundColor(.white)
+                }
+            )
+            .foregroundColor(isRightButtonEnabled ? .white : .gray)
+            .disabled(!isRightButtonEnabled)
         }
-        .padding(.horizontal, 20)
-        .frame(height: 20 )
+        .padding(.horizontal)
+        .frame(width: UIScreen.main.bounds.width, height: 50)
+        .background(Color.blackSub)
     }
 }
 
