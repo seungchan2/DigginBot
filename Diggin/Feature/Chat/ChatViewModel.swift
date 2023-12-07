@@ -12,7 +12,6 @@ import ChatGPTSwift
 import RealmSwift
 
 final class ChatViewModel: ObservableObject {
-    
     enum Action {
         case load
         case addChat(message: String)
@@ -77,8 +76,12 @@ final class ChatViewModel: ObservableObject {
     }
     
     private func addChatToRepository(message: String, direction: ChatItemDirection) {
-        let chat: Chat = .init(message: message, date: Date(), direction: direction)
-        let chatObject = ChatObject(message: chat.message!, date: chat.date, direction: direction == .right ? false : true)
+        let chat: Chat = .init(message: message,
+                               date: Date(),
+                               direction: direction)
+        let chatObject = ChatObject(message: chat.message!,
+                                    date: chat.date,
+                                    direction: direction == .right ? false : true)
         
         repository.addChat(chatObject)
             .sink { completion in
