@@ -15,6 +15,7 @@ struct MusicListData: Hashable, Identifiable {
     var artist: String
     var content: String
     var date: Date
+    var musicImage: Data
     var id: String { title }
 }
 
@@ -44,14 +45,12 @@ final class MusicListViewModel: ObservableObject {
                 }
             } receiveValue: { [weak self] writeObjects in
                 guard let self = self else { return }
-
-                print(writeObjects)
-
                 self.writeDataList = writeObjects.map { MusicListData(
                     title: $0.title,
                     artist: $0.artist,
-                    content: $0.content, // Ensure to handle nil case properly
-                    date: $0.writeDate
+                    content: $0.content,
+                    date: $0.writeDate,
+                    musicImage: $0.musicData ?? Data()
                 )}
                 
                 print(self.writeDataList)
