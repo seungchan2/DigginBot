@@ -102,7 +102,7 @@ struct MakeTopTabBar: View {
                     Spacer()
                     HStack {
                         Spacer()
-                        NavigationLink(destination: WriteView(viewModel: WriteViewModel(repository: WriteDBRepository()))) {
+                        NavigationLink(destination: WriteView(viewModel: WriteViewModel(repository: WriteDBRepository(), photoService: PhotoPickerService()))) {
                             Image(systemName: "plus")
                                 .renderingMode(.template)
                                 .foregroundColor(Color.stemGreen)
