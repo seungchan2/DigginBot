@@ -11,11 +11,12 @@ import SwiftUI
 struct DigginApp: App {
     var body: some Scene {
         WindowGroup {
-            if UserDefaults.standard.bool(forKey: "appStart") {
-                CustomTabBarView()
-            } else {
-                OnboardingView()
-            }
+            CustomTabBarView()
+//            if UserDefaults.standard.bool(forKey: "appStart") {
+//                CustomTabBarView()
+//            } else {
+//                OnboardingView()
+//            }
         }
     }
 }
