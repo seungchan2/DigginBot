@@ -7,6 +7,8 @@
 
 import Combine
 import Foundation
+import PhotosUI
+import SwiftUI
 
 import RealmSwift
 
@@ -15,7 +17,27 @@ final class WriteViewModel: ObservableObject {
     @Published var titleText: String = ""
     @Published var artistText: String = ""
     @Published var contentText: String = ""
-    @Published var diaryImage: Data?
+    @Published var imageData: Data = Data()
+    @Published var imageSelection: PhotosPickerItem? {
+        didSet {
+            Task {
+                await updateImage(pickerItem: imageSelection)
+            }
+        }
+    }
+    
+    var isButtonEnabledPublisher: AnyPublisher<Bool, Never> {
+        Publishers.CombineLatest3(
+            $titleText,
+            $artistText,
+            $contentText
+        )
+        .map { title, artist, content in
+            return !title.isEmpty && !artist.isEmpty && !content.isEmpty && !self.imageData.isEmpty
+        }
+        .eraseToAnyPublisher()
+    }
+
     private var subscription = Set<AnyCancellable>()
 
     enum Action {
@@ -25,9 +47,12 @@ final class WriteViewModel: ObservableObject {
     }
     
     private var repository: WriteDBRepositoryType
+    private var photoService: PhotoPickerServiceType
     
-    init(repository: WriteDBRepositoryType) {
+    init(repository: WriteDBRepositoryType,
+         photoService: PhotoPickerServiceType) {
         self.repository = repository
+        self.photoService = photoService
     }
     
     private func bind() {
@@ -52,7 +77,8 @@ final class WriteViewModel: ObservableObject {
         let musicObject = WriteObject(title: title,
                                       artist: artist,
                                       content: content,
-                                      writeDate: Date())
+                                      writeDate: Date(),
+                                      musicData: imageData)
         
         repository.addMusicList(musicObject)
             .sink { completion in
@@ -60,5 +86,18 @@ final class WriteViewModel: ObservableObject {
                 self?.titleText = ""
             }
             .store(in: &subscription)
+    }
+    
+    func updateImage(pickerItem: PhotosPickerItem?) async {
+        guard let pickerItem else { return }
+        
+        do {
+            let data = try await photoService.loadTransferable(from: pickerItem)
+            DispatchQueue.main.async {
+                self.imageData = data
+            }
+        } catch {
+            print("error")
+        }
     }
 }

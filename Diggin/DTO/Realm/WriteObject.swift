@@ -14,16 +14,19 @@ final class WriteObject: Object {
     @Persisted var artist: String
     @Persisted var content: String
     @Persisted var writeDate: Date
+    @Persisted var musicData: Data?
     @Persisted(primaryKey: true) var _id: ObjectId
     
     convenience init(title: String,
                      artist: String,
                      content: String,
-                     writeDate: Date) {
+                     writeDate: Date,
+                     musicData: Data) {
         self.init()
         self.title = title
         self.artist = artist
         self.content = content
         self.writeDate = writeDate
+        self.musicData = musicData
     }
 }
