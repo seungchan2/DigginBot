@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		EC2332CD2B1E32A50099A5BF /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2332CC2B1E32A50099A5BF /* CustomTabBarView.swift */; };
+		EC2332D02B1EB34A0099A5BF /* MusicListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2332CF2B1EB34A0099A5BF /* MusicListView.swift */; };
+		EC2332D32B207A7B0099A5BF /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2332D22B207A7B0099A5BF /* WriteView.swift */; };
+		EC2332D52B2096B60099A5BF /* WriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2332D42B2096B60099A5BF /* WriteViewModel.swift */; };
+		EC2332D72B2097250099A5BF /* WriteObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2332D62B2097250099A5BF /* WriteObject.swift */; };
+		EC2332D92B20977E0099A5BF /* WriteDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2332D82B20977E0099A5BF /* WriteDBRepository.swift */; };
+		EC2332DB2B2099D10099A5BF /* MusicListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2332DA2B2099D10099A5BF /* MusicListViewModel.swift */; };
 		EC6B74FC2B1B045C000D1FAA /* BorderedCaption.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B74FB2B1B045C000D1FAA /* BorderedCaption.swift */; };
 		EC6B74FE2B1B7814000D1FAA /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B74FD2B1B7814000D1FAA /* ToastView.swift */; };
 		EC6B75002B1DAFC3000D1FAA /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6B74FF2B1DAFC2000D1FAA /* ChatView.swift */; };
@@ -75,6 +81,12 @@
 
 /* Begin PBXFileReference section */
 		EC2332CC2B1E32A50099A5BF /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		EC2332CF2B1EB34A0099A5BF /* MusicListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListView.swift; sourceTree = "<group>"; };
+		EC2332D22B207A7B0099A5BF /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
+		EC2332D42B2096B60099A5BF /* WriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewModel.swift; sourceTree = "<group>"; };
+		EC2332D62B2097250099A5BF /* WriteObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteObject.swift; sourceTree = "<group>"; };
+		EC2332D82B20977E0099A5BF /* WriteDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDBRepository.swift; sourceTree = "<group>"; };
+		EC2332DA2B2099D10099A5BF /* MusicListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListViewModel.swift; sourceTree = "<group>"; };
 		EC6B74FB2B1B045C000D1FAA /* BorderedCaption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedCaption.swift; sourceTree = "<group>"; };
 		EC6B74FD2B1B7814000D1FAA /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		EC6B74FF2B1DAFC2000D1FAA /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -153,10 +165,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC2332CE2B1EB33A0099A5BF /* MusicList */ = {
+			isa = PBXGroup;
+			children = (
+				EC2332CF2B1EB34A0099A5BF /* MusicListView.swift */,
+				EC2332DA2B2099D10099A5BF /* MusicListViewModel.swift */,
+			);
+			path = MusicList;
+			sourceTree = "<group>";
+		};
+		EC2332D12B207A720099A5BF /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				EC2332D22B207A7B0099A5BF /* WriteView.swift */,
+				EC2332D42B2096B60099A5BF /* WriteViewModel.swift */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
 		EC6B750A2B1DC558000D1FAA /* Realm */ = {
 			isa = PBXGroup;
 			children = (
 				EC6B750B2B1DC563000D1FAA /* ChatObject.swift */,
+				EC2332D62B2097250099A5BF /* WriteObject.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -165,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				EC6B750E2B1DC615000D1FAA /* ChatDBRepository.swift */,
+				EC2332D82B20977E0099A5BF /* WriteDBRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -252,9 +284,9 @@
 		EC6F46222B1890DA005A8176 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				EC6F463E2B18A67F005A8176 /* CustomNavigationBar.swift */,
 				EC6F46402B18A69D005A8176 /* NavigationButtonType.swift */,
 				EC6B74FD2B1B7814000D1FAA /* ToastView.swift */,
+				EC6F463E2B18A67F005A8176 /* CustomNavigationBar.swift */,
 				EC6B74FB2B1B045C000D1FAA /* BorderedCaption.swift */,
 				EC6B75082B1DBE19000D1FAA /* KeyboardToolbar.swift */,
 				ECCCE6CD2B1E287700310D1D /* DigginButtonView.swift */,
@@ -265,6 +297,8 @@
 		EC6F46232B1890E0005A8176 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				EC2332D12B207A720099A5BF /* Write */,
+				EC2332CE2B1EB33A0099A5BF /* MusicList */,
 				EC6F46452B18B1F0005A8176 /* Tab */,
 				ECCCE6CB2B1E281D00310D1D /* Chat */,
 				EC6F46272B1891D6005A8176 /* Onboarding */,
@@ -547,20 +581,26 @@
 				EC6F462B2B1891F2005A8176 /* OnboardingViewModel.swift in Sources */,
 				EC6F46412B18A69D005A8176 /* NavigationButtonType.swift in Sources */,
 				ECCCE6D42B1E295B00310D1D /* ChatItemView.swift in Sources */,
+				EC2332D52B2096B60099A5BF /* WriteViewModel.swift in Sources */,
 				EC6B750C2B1DC563000D1FAA /* ChatObject.swift in Sources */,
 				ECCCE6D92B1E29D100310D1D /* ChatData.swift in Sources */,
 				EC6B750F2B1DC615000D1FAA /* ChatDBRepository.swift in Sources */,
 				EC2332CD2B1E32A50099A5BF /* CustomTabBarView.swift in Sources */,
 				EC6B75092B1DBE19000D1FAA /* KeyboardToolbar.swift in Sources */,
+				EC2332D72B2097250099A5BF /* WriteObject.swift in Sources */,
+				EC2332D92B20977E0099A5BF /* WriteDBRepository.swift in Sources */,
 				EC6F46492B18B235005A8176 /* TabViewModel.swift in Sources */,
 				EC6B74FC2B1B045C000D1FAA /* BorderedCaption.swift in Sources */,
 				EC6B74FE2B1B7814000D1FAA /* ToastView.swift in Sources */,
+				EC2332D32B207A7B0099A5BF /* WriteView.swift in Sources */,
 				ECCCE6CA2B1E263000310D1D /* Config.swift in Sources */,
+				EC2332DB2B2099D10099A5BF /* MusicListViewModel.swift in Sources */,
 				EC6F46312B189CFA005A8176 /* Path.swift in Sources */,
 				EC6F463D2B18A2F5005A8176 /* Date+Extension.swift in Sources */,
 				EC6B75002B1DAFC3000D1FAA /* ChatView.swift in Sources */,
 				EC6F462F2B189B5A005A8176 /* PathType.swift in Sources */,
 				ECCCE6D22B1E294000310D1D /* ChatItemDirection.swift in Sources */,
+				EC2332D02B1EB34A0099A5BF /* MusicListView.swift in Sources */,
 				ECCCE6AF2B1E130200310D1D /* Color.swift in Sources */,
 				EC6F464B2B18B2A7005A8176 /* HomeTabView.swift in Sources */,
 				EC6F46292B1891E4005A8176 /* OnboardingView.swift in Sources */,
@@ -744,7 +784,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = seungchan.Diggin;
+				PRODUCT_BUNDLE_IDENTIFIER = seungchan.MusicDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -775,7 +815,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = seungchan.Diggin;
+				PRODUCT_BUNDLE_IDENTIFIER = seungchan.MusicDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
