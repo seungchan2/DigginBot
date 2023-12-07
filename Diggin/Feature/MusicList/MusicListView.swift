@@ -11,8 +11,15 @@ struct MusicListView: View {
     @StateObject var viewModel: MusicListViewModel
     
     var body: some View {
-        ScrollView {
-            contentView
+        
+        if viewModel.writeDataList.isEmpty {
+            ScrollView {
+                emptyView
+            }
+        } else {
+            ScrollView {
+                contentView
+            }
         }
     }
     
@@ -25,6 +32,12 @@ struct MusicListView: View {
                               image: writeData.musicImage)
             .padding(.horizontal, 10)
         }
+    }
+    
+    var emptyView: some View {
+        Text("일기를 작성해주세요 ㅠ.ㅠ")
+            .foregroundColor(.white)
+            .padding(.top, 10)
     }
 }
 
@@ -49,17 +62,17 @@ struct MusicListItemView: View {
             VStack(alignment: .leading, spacing: 8) {
                 Text(title)
                     .foregroundColor(.white)
-                    .font(.suitB(13))
+                    .font(.suitB(15))
                     .lineLimit(1)
 
                 Text(artist)
                     .foregroundColor(.white)
-                    .font(.suitSB(11))
+                    .font(.suitSB(13))
                     .lineLimit(1)
 
                 Text(content)
                     .foregroundColor(.white)
-                    .font(.suitM(11))
+                    .font(.suitM(13))
                     .lineLimit(2)
             }
             .padding(.trailing, 10)
@@ -75,7 +88,7 @@ struct MusicListItemView: View {
     
     var dateTextView: some View {
         Text(date.formattedDay)
-            .font(.system(size: 10))
+            .font(.suitM(13))
             .foregroundColor(.white)
     }
 }
