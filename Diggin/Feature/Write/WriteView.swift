@@ -106,6 +106,9 @@ struct WriteView: View {
                         .padding(.vertical, 8)
                         .padding(.trailing, 20)
                         .frame(height: 200)
+                        .onTapGesture {
+                            self.endTextEditing()
+                        }
                 }
                 .padding(.leading, 20)
                 
@@ -137,5 +140,11 @@ struct WriteView: View {
 struct WriteView_Previews: PreviewProvider {
     static var previews: some View {
         WriteView(viewModel: WriteViewModel(repository: WriteDBRepository(), photoService: PhotoPickerService()))
+    }
+}
+
+extension View {
+    func endTextEditing() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
