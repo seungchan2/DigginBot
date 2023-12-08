@@ -31,8 +31,10 @@ struct ChatView: View {
                 }
                 .background(.black)
                 .navigationBarBackButtonHidden()
+                .onAppear {
+                    viewModel.send(action: .load)
+                }
             }
-            
         }
         .background(Color.blackSub)
     }

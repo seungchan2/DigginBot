@@ -44,7 +44,7 @@ final class MusicListViewModel: ObservableObject {
                     print("Error: \(error)")
                 }
             } receiveValue: { [weak self] writeObjects in
-                guard let self = self else { return }
+                guard let self else { return }
                 self.writeDataList = writeObjects.map { MusicListData(
                     title: $0.title,
                     artist: $0.artist,
@@ -61,7 +61,7 @@ final class MusicListViewModel: ObservableObject {
     func send(action: Action) {
         switch action {
         case .load:
-            print("1")
+            self.bind()
         }
     }
 }

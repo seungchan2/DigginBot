@@ -30,7 +30,6 @@ final class ChatViewModel: ObservableObject {
     
     init(repository: ChatDBRepositoryType) {
         self.repository = repository
-        bind()
     }
     
     private func bind() {
@@ -68,7 +67,7 @@ final class ChatViewModel: ObservableObject {
     func send(action: Action) {
         switch action {
         case .load:
-            print("load")
+            self.bind()
         case let .addChat(message):
             addChatToRepository(message: message, direction: .right)
             getGPTAnswer(message: message)
