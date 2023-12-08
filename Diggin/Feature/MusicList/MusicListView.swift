@@ -11,7 +11,6 @@ struct MusicListView: View {
     @StateObject var viewModel: MusicListViewModel
     
     var body: some View {
-        
         if viewModel.writeDataList.isEmpty {
             ScrollView {
                 emptyView
@@ -19,6 +18,9 @@ struct MusicListView: View {
         } else {
             ScrollView {
                 contentView
+            }
+            .onAppear {
+                viewModel.send(action: .load)
             }
         }
     }
@@ -58,18 +60,18 @@ struct MusicListItemView: View {
                     .clipped()
                     .cornerRadius(10)
             }
-          
+            
             VStack(alignment: .leading, spacing: 8) {
                 Text(title)
                     .foregroundColor(.white)
                     .font(.suitB(15))
                     .lineLimit(1)
-
+                
                 Text(artist)
                     .foregroundColor(.white)
                     .font(.suitSB(13))
                     .lineLimit(1)
-
+                
                 Text(content)
                     .foregroundColor(.white)
                     .font(.suitM(13))
