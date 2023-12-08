@@ -67,6 +67,7 @@ struct ChatItemView: View {
                     Text(message)
                         .foregroundColor(.white)
                         .font(.suitM(15))
+                        .lineSpacing(6)
                 }
             }
         }
