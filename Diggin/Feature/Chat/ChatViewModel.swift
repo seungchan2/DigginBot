@@ -17,10 +17,7 @@ final class ChatViewModel: ObservableObject {
         case addChat(message: String)
     }
     
-    @Published var chatDataList: [ChatData] = [ChatData(dateStr: "오늘",
-                                                        chats: [Chat(message: "오늘 들을 음악은?",
-                                                                     date: Date(),
-                                                                     direction: .left)])]
+    @Published var chatDataList: [ChatData] = []
     
     @Published var message: String = ""
     private var subscription = Set<AnyCancellable>()
@@ -32,28 +29,53 @@ final class ChatViewModel: ObservableObject {
         self.repository = repository
     }
     
-    private func bind() {
+    func send(action: Action) {
+        switch action {
+        case .load:
+            self.loadChat()
+        case let .addChat(message):
+            addChatToRepository(message: message, direction: .right)
+            getGPTAnswer(message: message)
+        }
+    }
+    
+    private func loadChat() {
         repository.observeChat()
             .sink { [weak self] chatObjects in
                 guard let self else { return }
-                
+
                 let chats = chatObjects.map { chatObject in
-                    if chatObject.direction {
-                        return Chat(message: chatObject.message, date: chatObject.date, direction: .left)
-                    } else {
-                        return Chat(message: chatObject.message, date: chatObject.date, direction: .right)
-                    }
+                    Chat(
+                        message: chatObject.message,
+                        date: chatObject.date,
+                        direction: chatObject.direction ? .left : .right
+                    )
                 }
-                
-                let groupedChats = Dictionary(grouping: chats) { chat in
-                    return self.formatDate(chat.date)
-                }
-                
+
+                let groupedChats = Dictionary(grouping: chats) { self.formatDate($0.date) }
+
                 let chatDataList = groupedChats.map { dateStr, chats in
-                    return ChatData(dateStr: dateStr, chats: chats)
+                    ChatData(dateStr: dateStr, chats: chats)
                 }
-                
+
+                self.makeDigginBotAnswer(chatDataList)
                 self.chatDataList = chatDataList
+            }
+            .store(in: &subscription)
+    }
+    
+    private func makeDigginBotAnswer(_ chatDataList: [ChatData]) {
+        guard chatDataList.isEmpty else { return }
+
+        let chatObjects = ChatObject(
+            message: "Diggin에 방문해주셔서 감사해요. \n오늘의 음악을 추천드릴게요. \n저에게 오늘의 기분과 어떤 장르의 음악을 듣고 싶은지 말씀해주세요",
+            date: Date(),
+            direction: true
+        )
+
+        repository.addChat(chatObjects)
+            .sink { _ in } receiveValue: { [weak self] _ in
+                self?.message = ""
             }
             .store(in: &subscription)
     }
@@ -62,16 +84,6 @@ final class ChatViewModel: ObservableObject {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy년 MM월 dd일"
         return formatter.string(from: date)
-    }
-    
-    func send(action: Action) {
-        switch action {
-        case .load:
-            self.bind()
-        case let .addChat(message):
-            addChatToRepository(message: message, direction: .right)
-            getGPTAnswer(message: message)
-        }
     }
     
     private func addChatToRepository(message: String, direction: ChatItemDirection) {

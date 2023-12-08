@@ -17,15 +17,7 @@ struct ChatView: View {
                 .font(.suitB(17))
                 .padding(.leading, 20)
                 .foregroundColor(.gray)
-            
-            if viewModel.chatDataList.isEmpty {
-                ScrollView {
-                    VStack(alignment: .center) {
-                        emptyView
-                    }
-                    .frame(maxWidth: .infinity, alignment: .center)
-                }
-            } else {
+     
                 ScrollView {
                     contentView
                 }
@@ -34,7 +26,6 @@ struct ChatView: View {
                 .onAppear {
                     viewModel.send(action: .load)
                 }
-            }
         }
         .background(Color.blackSub)
     }
