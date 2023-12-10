@@ -6,28 +6,54 @@
 //
 
 import SwiftUI
+import SpriteKit
+
+class SnowScene: SKScene {
+    override func didMove(to view: SKView) {
+        addSnow()
+    }
+    
+    func addSnow() {
+        let emitterNode = SKEmitterNode(fileNamed: "SnowParticle.sks")
+        emitterNode?.position = CGPoint(x: size.width / 3, y: size.height)
+        addChild(emitterNode!)
+    }
+}
 
 struct ChatView: View {
     @StateObject var viewModel: ChatViewModel
     @FocusState var isFocused: Bool
     
+    var scene: SKScene {
+        let scene = SnowScene()
+        scene.size = CGSize(width: 216, height: 216)
+        scene.scaleMode = .fill
+        scene.backgroundColor = .black
+        return scene
+    }
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("DigginBot에게 음악 추천 받아보세요!")
-                .font(.suitB(17))
-                .padding(.leading, 20)
-                .foregroundColor(.gray)
-     
+        ZStack {
+            SpriteView(scene: self.scene)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack(alignment: .leading) {
+                Text("DigginBot에게 음악 추천 받아보세요!")
+                    .font(.suitB(17))
+                    .padding(.leading, 20)
+                    .foregroundColor(.white)
+                
                 ScrollView {
                     contentView
                 }
-                .background(.black)
+                .background(Color.clear)
                 .navigationBarBackButtonHidden()
                 .onAppear {
                     viewModel.send(action: .load)
                 }
+            }
         }
-        .background(Color.blackSub)
     }
     
     var contentView: some View {
@@ -42,16 +68,11 @@ struct ChatView: View {
         }
     }
     
-    var emptyView: some View {
-        Text("대화를 시작해주세요 ㅠ.ㅠ")
-            .foregroundColor(.white)
-    }
-    
     func headerView(dateStr: String) -> some View {
         ZStack {
             Rectangle()
                 .foregroundColor(.clear)
-                .background(Color.black)
+                .background(Color.clear)
                 .cornerRadius(10)
             Text(dateStr)
                 .padding(.top, 10)
@@ -60,7 +81,6 @@ struct ChatView: View {
         }
     }
 }
-
 
 struct ChatItemView_Previews: PreviewProvider {
     static var previews: some View {
