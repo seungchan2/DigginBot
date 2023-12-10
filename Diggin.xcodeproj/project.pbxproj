@@ -45,6 +45,8 @@
 		EC6F465D2B18FB19005A8176 /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EC6F465C2B18FB19005A8176 /* ChatGPTSwift */; };
 		ECBF851A2B21DD3C00D7C85D /* CustomTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBF85192B21DD3C00D7C85D /* CustomTextEditor.swift */; };
 		ECBF851E2B21E8DE00D7C85D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBF851D2B21E8DE00D7C85D /* Launch Screen.storyboard */; };
+		ECBF85212B2419E600D7C85D /* SnowParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = ECBF851F2B2419E600D7C85D /* SnowParticle.sks */; };
+		ECBF85222B2419E600D7C85D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECBF85202B2419E600D7C85D /* Assets.xcassets */; };
 		ECCCE6AD2B1E12D900310D1D /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECCCE6AC2B1E12D900310D1D /* Color.xcassets */; };
 		ECCCE6AF2B1E130200310D1D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCCE6AE2B1E130200310D1D /* Color.swift */; };
 		ECCCE6BA2B1E1DE300310D1D /* SUIT-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = ECCCE6B12B1E1DE300310D1D /* SUIT-Bold.otf */; };
@@ -121,6 +123,8 @@
 		EC6F464A2B18B2A7005A8176 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		ECBF85192B21DD3C00D7C85D /* CustomTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEditor.swift; sourceTree = "<group>"; };
 		ECBF851D2B21E8DE00D7C85D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		ECBF851F2B2419E600D7C85D /* SnowParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SnowParticle.sks; sourceTree = "<group>"; };
+		ECBF85202B2419E600D7C85D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
 		ECCCE6AC2B1E12D900310D1D /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		ECCCE6AE2B1E130200310D1D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		ECCCE6B12B1E1DE300310D1D /* SUIT-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Bold.otf"; sourceTree = "<group>"; };
@@ -400,6 +404,8 @@
 		ECCCE6CC2B1E283D00310D1D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				ECBF851F2B2419E600D7C85D /* SnowParticle.sks */,
+				ECBF85202B2419E600D7C85D /* Assets.xcassets */,
 				ECCCE6B02B1E1DB600310D1D /* Font */,
 				ECCCE6AE2B1E130200310D1D /* Color.swift */,
 				EC6F45FA2B18909E005A8176 /* Assets.xcassets */,
@@ -548,9 +554,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECBF85212B2419E600D7C85D /* SnowParticle.sks in Resources */,
 				ECCCE6BC2B1E1DE300310D1D /* SUIT-Heavy.otf in Resources */,
 				EC6F45FE2B18909E005A8176 /* Preview Assets.xcassets in Resources */,
 				EC6F45FB2B18909E005A8176 /* Assets.xcassets in Resources */,
+				ECBF85222B2419E600D7C85D /* Assets.xcassets in Resources */,
 				ECCCE6C12B1E1DE300310D1D /* SUIT-Regular.otf in Resources */,
 				ECBF851E2B21E8DE00D7C85D /* Launch Screen.storyboard in Resources */,
 				ECCCE6C22B1E1DE300310D1D /* SUIT-ExtraLight.otf in Resources */,
@@ -780,7 +788,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Diggin/Preview Content\"";
 				DEVELOPMENT_TEAM = RQHZUCMHSH;
 				ENABLE_PREVIEWS = YES;
@@ -796,7 +804,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = seungchan.MusicDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -815,7 +823,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Diggin/Preview Content\"";
 				DEVELOPMENT_TEAM = RQHZUCMHSH;
 				ENABLE_PREVIEWS = YES;
@@ -831,7 +839,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = seungchan.MusicDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
