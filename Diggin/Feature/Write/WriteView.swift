@@ -43,14 +43,12 @@ struct WriteView: View {
                             .resizable()
                             .scaledToFill()
                             .frame(width: 120, height: 120)
-                            .clipped()
-                            .padding(.top, 30)
                             .cornerRadius(10)
                     } else {
                         Image("Logo")
                             .resizable()
                             .frame(width: 120, height: 120)
-                            .padding(.top, 30)
+                            .scaledToFill()
                             .cornerRadius(10)
                     }
                 }
@@ -71,6 +69,7 @@ struct WriteView: View {
                         .padding(.trailing, 20)
                 }
                 .padding(.leading, 20)
+                .padding(.top, 20)
                 
                 HStack {
                     Text("아티스트")
@@ -85,7 +84,6 @@ struct WriteView: View {
                         .padding(.horizontal, 10)
                         .background(Color.black)
                         .cornerRadius(10)
-                    
                         .padding(.leading, 20)
                         .padding(.trailing, 20)
                 }
