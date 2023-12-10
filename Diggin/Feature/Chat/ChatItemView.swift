@@ -60,7 +60,7 @@ struct ChatItemView: View {
             
             HStack {
                 Image(systemName: "heart.fill")
-                    .foregroundColor(.black)
+                    .foregroundColor(.clear)
                     .frame(width: 35, height: 35)
                 
                 VStack(spacing: 0) {
