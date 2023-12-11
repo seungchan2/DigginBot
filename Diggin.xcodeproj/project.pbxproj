@@ -47,6 +47,9 @@
 		ECBF851E2B21E8DE00D7C85D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBF851D2B21E8DE00D7C85D /* Launch Screen.storyboard */; };
 		ECBF85212B2419E600D7C85D /* SnowParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = ECBF851F2B2419E600D7C85D /* SnowParticle.sks */; };
 		ECBF85222B2419E600D7C85D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECBF85202B2419E600D7C85D /* Assets.xcassets */; };
+		ECBF85242B27022700D7C85D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECBF85232B27022700D7C85D /* GoogleService-Info.plist */; };
+		ECBF85272B2702A600D7C85D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = ECBF85262B2702A600D7C85D /* FirebaseAnalytics */; };
+		ECBF85292B2702A600D7C85D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = ECBF85282B2702A600D7C85D /* FirebaseCrashlytics */; };
 		ECCCE6AD2B1E12D900310D1D /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECCCE6AC2B1E12D900310D1D /* Color.xcassets */; };
 		ECCCE6AF2B1E130200310D1D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCCE6AE2B1E130200310D1D /* Color.swift */; };
 		ECCCE6BA2B1E1DE300310D1D /* SUIT-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = ECCCE6B12B1E1DE300310D1D /* SUIT-Bold.otf */; };
@@ -125,6 +128,7 @@
 		ECBF851D2B21E8DE00D7C85D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		ECBF851F2B2419E600D7C85D /* SnowParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SnowParticle.sks; sourceTree = "<group>"; };
 		ECBF85202B2419E600D7C85D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
+		ECBF85232B27022700D7C85D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ECCCE6AC2B1E12D900310D1D /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		ECCCE6AE2B1E130200310D1D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		ECCCE6B12B1E1DE300310D1D /* SUIT-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Bold.otf"; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 			files = (
 				EC6B75072B1DB6E8000D1FAA /* RealmSwift in Frameworks */,
 				EC6B75052B1DB6E8000D1FAA /* Realm in Frameworks */,
+				ECBF85292B2702A600D7C85D /* FirebaseCrashlytics in Frameworks */,
+				ECBF85272B2702A600D7C85D /* FirebaseAnalytics in Frameworks */,
 				EC6F465D2B18FB19005A8176 /* ChatGPTSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,6 +241,7 @@
 		EC6F45F52B18909D005A8176 /* Diggin */ = {
 			isa = PBXGroup;
 			children = (
+				ECBF85232B27022700D7C85D /* GoogleService-Info.plist */,
 				ECCCE6C32B1E1DF200310D1D /* Info.plist */,
 				EC6F46202B1890D1005A8176 /* App */,
 				ECCCE6CF2B1E28B900310D1D /* Extension */,
@@ -461,6 +468,8 @@
 				EC6F465C2B18FB19005A8176 /* ChatGPTSwift */,
 				EC6B75042B1DB6E8000D1FAA /* Realm */,
 				EC6B75062B1DB6E8000D1FAA /* RealmSwift */,
+				ECBF85262B2702A600D7C85D /* FirebaseAnalytics */,
+				ECBF85282B2702A600D7C85D /* FirebaseCrashlytics */,
 			);
 			productName = Diggin;
 			productReference = EC6F45F32B18909D005A8176 /* Diggin.app */;
@@ -537,6 +546,7 @@
 			packageReferences = (
 				EC6F465B2B18FB19005A8176 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */,
 				EC6B75032B1DB6E8000D1FAA /* XCRemoteSwiftPackageReference "realm-swift" */,
+				ECBF85252B2702A600D7C85D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = EC6F45F42B18909D005A8176 /* Products */;
 			projectDirPath = "";
@@ -555,6 +565,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECBF85212B2419E600D7C85D /* SnowParticle.sks in Resources */,
+				ECBF85242B27022700D7C85D /* GoogleService-Info.plist in Resources */,
 				ECCCE6BC2B1E1DE300310D1D /* SUIT-Heavy.otf in Resources */,
 				EC6F45FE2B18909E005A8176 /* Preview Assets.xcassets in Resources */,
 				EC6F45FB2B18909E005A8176 /* Assets.xcassets in Resources */,
@@ -985,6 +996,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		ECBF85252B2702A600D7C85D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1002,6 +1021,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EC6F465B2B18FB19005A8176 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */;
 			productName = ChatGPTSwift;
+		};
+		ECBF85262B2702A600D7C85D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECBF85252B2702A600D7C85D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		ECBF85282B2702A600D7C85D /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECBF85252B2702A600D7C85D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
