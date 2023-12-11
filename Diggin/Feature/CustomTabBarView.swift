@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import FirebaseAnalytics
+
 enum tapInfo : String, CaseIterable {
     case recommend = "추천"
     case list = "보관함"
@@ -78,10 +80,11 @@ struct MakeTopTabBar: View {
                         .background(Color.black)
                         .cornerRadius(10)
                         .padding(.leading, 20)
-                    
                     Button {
                         viewModel.send(action: .addChat(message: viewModel.message))
                         isFocused = false
+                        let event = "postGPT"
+                        Analytics.logEvent(event, parameters: nil)
                     } label: {
                         Image("paper-plane")
                             .resizable()
