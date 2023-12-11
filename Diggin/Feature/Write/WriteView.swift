@@ -9,6 +9,8 @@ import Combine
 import SwiftUI
 import PhotosUI
 
+import FirebaseAnalytics
+
 struct WriteView: View {
     @StateObject var viewModel: WriteViewModel
     @Environment(\.presentationMode) var presentationMode
@@ -22,7 +24,6 @@ struct WriteView: View {
                 CustomNavigationBar(leftButtonAction: {
                     presentationMode.wrappedValue.dismiss()
                 }, rightButtonAction: {
-                    
                     if !isRightButtonEnabled {
                         showToast(message: "")
                     } else {
@@ -30,6 +31,8 @@ struct WriteView: View {
                                                              artist: viewModel.artistText,
                                                              content: viewModel.contentText))
                         presentationMode.wrappedValue.dismiss()
+                        let event = "makeDiary"
+                        Analytics.logEvent(event, parameters: nil)
                     }
                 }, isRightButtonEnabled: isRightButtonEnabled)
                 .onReceive(viewModel.isButtonEnabledPublisher) { isEnabled in
@@ -119,6 +122,10 @@ struct WriteView: View {
                 }
                 .transition(.move(edge: .bottom))
             }
+        }
+        .onAppear {
+            let event = "initWriteView"
+            Analytics.logEvent(event, parameters: nil)
         }
         .background(Color.blackSub)
         .navigationBarBackButtonHidden()
