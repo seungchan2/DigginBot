@@ -22,7 +22,11 @@ struct DigginApp: App {
     
     var body: some Scene {
         WindowGroup {
-            CustomTabBarView()
+            if UserDefaults.standard.bool(forKey: "appStart") {
+                CustomTabBarView()
+            } else {
+                OnboardingView()
+            }
         }
     }
 }

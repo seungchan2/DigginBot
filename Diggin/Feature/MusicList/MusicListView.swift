@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MusicListView: View {
     @StateObject var viewModel: MusicListViewModel
-    
     var body: some View {
         if viewModel.writeDataList.isEmpty {
             ScrollView {

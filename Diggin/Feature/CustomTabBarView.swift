@@ -17,7 +17,8 @@ enum tapInfo : String, CaseIterable {
 struct CustomTabBarView: View {
     @State private var selectedPicker: tapInfo = .recommend
     @Namespace private var animation
-    
+    @EnvironmentObject private var pathModel: PathModel
+
     var body: some View {
         NavigationView {
             VStack {
@@ -25,7 +26,7 @@ struct CustomTabBarView: View {
                 MakeTopTabBar(tap: selectedPicker, viewModel: ChatViewModel(repository: ChatDBRepository()))
             }
             .background(Color.blackSub.edgesIgnoringSafeArea(.all))
-        }
+        }.onAppear { print("load")}
     }
     
     @ViewBuilder
@@ -57,7 +58,6 @@ struct CustomTabBarView: View {
 }
 
 struct MakeTopTabBar: View {
-    
     var tap: tapInfo
     
     @StateObject var viewModel: ChatViewModel
