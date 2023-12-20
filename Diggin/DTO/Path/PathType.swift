@@ -8,7 +8,5 @@
 import Foundation
 
 enum PathType: Hashable {
-    case makeGPT
-    case musicList
-    case myPage
+    case main
 }

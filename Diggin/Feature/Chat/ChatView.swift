@@ -23,7 +23,7 @@ class SnowScene: SKScene {
 struct ChatView: View {
     @StateObject var viewModel: ChatViewModel
     @FocusState var isFocused: Bool
-    
+
     var scene: SKScene {
         let scene = SnowScene()
         scene.size = CGSize(width: 216, height: 216)

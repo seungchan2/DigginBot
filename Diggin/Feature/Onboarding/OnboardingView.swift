@@ -7,31 +7,25 @@
 
 import SwiftUI
 
+import FirebaseAnalytics
+
 struct OnboardingView: View {
-    
     @StateObject private var pathModel = PathModel()
     @StateObject private var onboardingViewModel = OnboardingViewModel()
     
     var body: some View {
-           NavigationStack(path: $pathModel.paths) {
-               OnboardingContentView(onboardingViewModel: onboardingViewModel)
-                   .navigationDestination(
-                       for: PathType.self) { pathType in
-                           switch pathType {
-                           case .makeGPT:
-                               ChatView(viewModel: ChatViewModel(repository: ChatDBRepository()))
-                                   .navigationBarBackButtonHidden()
-                           case .musicList:
-                               ChatView(viewModel: ChatViewModel(repository: ChatDBRepository()))
-                                   .navigationBarBackButtonHidden()
-                           case .myPage:
-                               ChatView(viewModel: ChatViewModel(repository: ChatDBRepository()))
-                                   .navigationBarBackButtonHidden()
-                   }
-               }
-           }
-           .environmentObject(pathModel)
-       }
+        NavigationStack(path: $pathModel.paths) {
+            OnboardingContentView(onboardingViewModel: onboardingViewModel)
+                .navigationDestination(
+                    for: PathType.self) { pathType in
+                        switch pathType {
+                        case .main:
+                            CustomTabBarView()                                   .navigationBarBackButtonHidden()
+                        }
+                    }
+        }
+        .environmentObject(pathModel)
+    }
 }
 
 private struct OnboardingContentView: View {
@@ -44,11 +38,11 @@ private struct OnboardingContentView: View {
     fileprivate var body: some View {
         VStack {
             OnboardingCellListView(onboardingViewModel: onboardingViewModel)
-            
             Spacer()
             StartButtonView()
         }
         .edgesIgnoringSafeArea(.top)
+        .background(Color.blackSub)
     }
 }
 
@@ -72,10 +66,8 @@ private struct OnboardingCellListView: View {
             }
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
-        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 1.5)
-        .background(
-            selectedIndex % 2 == 0 ? .white : .green
-        )
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 1.3)
+        .background(Color.stemGreen)
     }
 }
 
@@ -91,32 +83,8 @@ private struct OnboardingCellView: View {
             Image(onboardingContent.imageFileName)
                 .resizable()
                 .scaledToFit()
-                .background(.red)
-            
-            HStack {
-                Spacer()
-                
-                VStack {
-                    Spacer()
-                        .frame(height: 50)
-                    
-                    Text(onboardingContent.title)
-                        .font(.system(size: 16, weight: .bold))
-                    
-                    Spacer()
-                        .frame(height: 5)
-                    
-                    Text(onboardingContent.subTitle)
-                        .font(.system(size: 16))
-                }
-                
-                Spacer()
-                
-            }
-            .background(.white)
-            .cornerRadius(0)
+                .padding(.horizontal, 10)
         }
-        .shadow(radius: 10)
     }
 }
 
@@ -126,22 +94,18 @@ private struct StartButtonView: View {
         Button(
             action: {
                 UserDefaults.standard.set(true, forKey: "appStart")
-                pathModel.paths.append(.makeGPT)
-                pathModel.paths.append(.musicList)
-                pathModel.paths.append(.myPage)
+                pathModel.paths.append(.main)
+                let event = "startDiggin"
+                Analytics.logEvent(event, parameters: nil)
             },
             label:  {
                 HStack {
                     Text("시작하기")
-                        .font(.system(size: 16, weight: .medium))
-                        .foregroundColor(.yellow)
-                    
-                    Image("startHome")
-                        .renderingMode(.template)
-                        .foregroundColor(.yellow)
+                        .font(.suitB(18))
+                        .foregroundColor(.white)
                 }
             })
-        .padding(.bottom, 50 )
+        .padding(.bottom, 50)
     }
 }
 
