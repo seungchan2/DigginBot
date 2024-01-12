@@ -6,14 +6,26 @@
 //
 
 import SwiftUI
+import UIKit
+import UserNotifications
+
 import FirebaseCore
 
-class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-    return true
-  }
+class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if granted {
+                print("알림 권한이 허용되었습니다.")
+            } else {
+                print("알림 권한이 거부되었습니다.")
+            }
+        }
+        UNUserNotificationCenter.current().delegate = self
+        return true
+    }
 }
 
 @main

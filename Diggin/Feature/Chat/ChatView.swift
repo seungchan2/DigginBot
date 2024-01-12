@@ -23,7 +23,7 @@ class SnowScene: SKScene {
 struct ChatView: View {
     @StateObject var viewModel: ChatViewModel
     @FocusState var isFocused: Bool
-
+    
     var scene: SKScene {
         let scene = SnowScene()
         scene.size = CGSize(width: 216, height: 216)
@@ -51,6 +51,7 @@ struct ChatView: View {
                 .navigationBarBackButtonHidden()
                 .onAppear {
                     viewModel.send(action: .load)
+                    self.scheduleNotification()
                 }
             }
         }
@@ -79,6 +80,23 @@ struct ChatView: View {
                 .font(.suitB(15))
                 .foregroundColor(Color.white)
         }
+    }
+    
+    func scheduleNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "diggin"
+        content.body = "오늘의 음악을 digginBot에게 물어보세요!"
+        content.sound = UNNotificationSound.default
+        
+        var dateComponents = DateComponents()
+        dateComponents.hour = 8
+        dateComponents.minute = 0
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request)
     }
 }
 
