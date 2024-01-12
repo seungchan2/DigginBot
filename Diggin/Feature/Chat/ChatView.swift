@@ -89,8 +89,8 @@ struct ChatView: View {
         content.sound = UNNotificationSound.default
         
         var dateComponents = DateComponents()
-        dateComponents.hour = 15
-        dateComponents.minute = 14
+        dateComponents.hour = 8
+        dateComponents.minute = 0
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
