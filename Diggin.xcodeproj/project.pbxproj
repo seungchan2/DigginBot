@@ -43,6 +43,15 @@
 		EC6F46492B18B235005A8176 /* TabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6F46482B18B235005A8176 /* TabViewModel.swift */; };
 		EC6F464B2B18B2A7005A8176 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6F464A2B18B2A7005A8176 /* HomeTabView.swift */; };
 		EC6F465D2B18FB19005A8176 /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EC6F465C2B18FB19005A8176 /* ChatGPTSwift */; };
+		EC9E4D5D2B57D884004B8CC3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9E4D5C2B57D884004B8CC3 /* WidgetKit.framework */; };
+		EC9E4D5F2B57D884004B8CC3 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9E4D5E2B57D884004B8CC3 /* SwiftUI.framework */; };
+		EC9E4D622B57D884004B8CC3 /* DigginWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9E4D612B57D884004B8CC3 /* DigginWidgetBundle.swift */; };
+		EC9E4D642B57D884004B8CC3 /* DigginWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9E4D632B57D884004B8CC3 /* DigginWidgetLiveActivity.swift */; };
+		EC9E4D662B57D884004B8CC3 /* DigginWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9E4D652B57D884004B8CC3 /* DigginWidget.swift */; };
+		EC9E4D692B57D886004B8CC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC9E4D682B57D886004B8CC3 /* Assets.xcassets */; };
+		EC9E4D6B2B57D886004B8CC3 /* DigginWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EC9E4D672B57D884004B8CC3 /* DigginWidget.intentdefinition */; };
+		EC9E4D6C2B57D886004B8CC3 /* DigginWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EC9E4D672B57D884004B8CC3 /* DigginWidget.intentdefinition */; };
+		EC9E4D6F2B57D886004B8CC3 /* DigginWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EC9E4D5A2B57D884004B8CC3 /* DigginWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ECBF851A2B21DD3C00D7C85D /* CustomTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBF85192B21DD3C00D7C85D /* CustomTextEditor.swift */; };
 		ECBF851E2B21E8DE00D7C85D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBF851D2B21E8DE00D7C85D /* Launch Screen.storyboard */; };
 		ECBF85212B2419E600D7C85D /* SnowParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = ECBF851F2B2419E600D7C85D /* SnowParticle.sks */; };
@@ -85,7 +94,28 @@
 			remoteGlobalIDString = EC6F45F22B18909D005A8176;
 			remoteInfo = Diggin;
 		};
+		EC9E4D6D2B57D886004B8CC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC6F45EB2B18909D005A8176 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC9E4D592B57D884004B8CC3;
+			remoteInfo = DigginWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EC9E4D732B57D886004B8CC3 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EC9E4D6F2B57D886004B8CC3 /* DigginWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EC2332CC2B1E32A50099A5BF /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
@@ -124,6 +154,18 @@
 		EC6F46462B18B1FC005A8176 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		EC6F46482B18B235005A8176 /* TabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewModel.swift; sourceTree = "<group>"; };
 		EC6F464A2B18B2A7005A8176 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
+		EC9E4D0B2B5645F3004B8CC3 /* MusicKitRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicKitRepositoryType.swift; sourceTree = "<group>"; };
+		EC9E4D0D2B565255004B8CC3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		EC9E4D0F2B56527A004B8CC3 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
+		EC9E4D5A2B57D884004B8CC3 /* DigginWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DigginWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9E4D5C2B57D884004B8CC3 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		EC9E4D5E2B57D884004B8CC3 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		EC9E4D612B57D884004B8CC3 /* DigginWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigginWidgetBundle.swift; sourceTree = "<group>"; };
+		EC9E4D632B57D884004B8CC3 /* DigginWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigginWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		EC9E4D652B57D884004B8CC3 /* DigginWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigginWidget.swift; sourceTree = "<group>"; };
+		EC9E4D672B57D884004B8CC3 /* DigginWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = DigginWidget.intentdefinition; sourceTree = "<group>"; };
+		EC9E4D682B57D886004B8CC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC9E4D6A2B57D886004B8CC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECBF85192B21DD3C00D7C85D /* CustomTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEditor.swift; sourceTree = "<group>"; };
 		ECBF851D2B21E8DE00D7C85D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		ECBF851F2B2419E600D7C85D /* SnowParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SnowParticle.sks; sourceTree = "<group>"; };
@@ -178,6 +220,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC9E4D572B57D884004B8CC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9E4D5F2B57D884004B8CC3 /* SwiftUI.framework in Frameworks */,
+				EC9E4D5D2B57D884004B8CC3 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -211,6 +262,7 @@
 		EC6B750D2B1DC603000D1FAA /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				EC9E4D0B2B5645F3004B8CC3 /* MusicKitRepositoryType.swift */,
 				EC6B750E2B1DC615000D1FAA /* ChatDBRepository.swift */,
 				EC2332D82B20977E0099A5BF /* WriteDBRepository.swift */,
 				EC2332E22B219F520099A5BF /* PhotoPickerService.swift */,
@@ -224,6 +276,8 @@
 				EC6F45F52B18909D005A8176 /* Diggin */,
 				EC6F46062B18909E005A8176 /* DigginTests */,
 				EC6F46102B18909E005A8176 /* DigginUITests */,
+				EC9E4D602B57D884004B8CC3 /* DigginWidget */,
+				EC9E4D5B2B57D884004B8CC3 /* Frameworks */,
 				EC6F45F42B18909D005A8176 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -234,6 +288,7 @@
 				EC6F45F32B18909D005A8176 /* Diggin.app */,
 				EC6F46032B18909E005A8176 /* DigginTests.xctest */,
 				EC6F460D2B18909E005A8176 /* DigginUITests.xctest */,
+				EC9E4D5A2B57D884004B8CC3 /* DigginWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -316,6 +371,8 @@
 		EC6F46232B1890E0005A8176 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				EC9E4D0D2B565255004B8CC3 /* TestView.swift */,
+				EC9E4D0F2B56527A004B8CC3 /* TestViewModel.swift */,
 				EC2332D12B207A720099A5BF /* Write */,
 				EC2332CE2B1EB33A0099A5BF /* MusicList */,
 				EC6F46452B18B1F0005A8176 /* Tab */,
@@ -380,6 +437,28 @@
 				EC6F464A2B18B2A7005A8176 /* HomeTabView.swift */,
 			);
 			path = Tab;
+			sourceTree = "<group>";
+		};
+		EC9E4D5B2B57D884004B8CC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC9E4D5C2B57D884004B8CC3 /* WidgetKit.framework */,
+				EC9E4D5E2B57D884004B8CC3 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC9E4D602B57D884004B8CC3 /* DigginWidget */ = {
+			isa = PBXGroup;
+			children = (
+				EC9E4D612B57D884004B8CC3 /* DigginWidgetBundle.swift */,
+				EC9E4D632B57D884004B8CC3 /* DigginWidgetLiveActivity.swift */,
+				EC9E4D652B57D884004B8CC3 /* DigginWidget.swift */,
+				EC9E4D672B57D884004B8CC3 /* DigginWidget.intentdefinition */,
+				EC9E4D682B57D886004B8CC3 /* Assets.xcassets */,
+				EC9E4D6A2B57D886004B8CC3 /* Info.plist */,
+			);
+			path = DigginWidget;
 			sourceTree = "<group>";
 		};
 		ECCCE6B02B1E1DB600310D1D /* Font */ = {
@@ -458,10 +537,12 @@
 				EC6F45EF2B18909D005A8176 /* Sources */,
 				EC6F45F02B18909D005A8176 /* Frameworks */,
 				EC6F45F12B18909D005A8176 /* Resources */,
+				EC9E4D732B57D886004B8CC3 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EC9E4D6E2B57D886004B8CC3 /* PBXTargetDependency */,
 			);
 			name = Diggin;
 			packageProductDependencies = (
@@ -511,6 +592,23 @@
 			productReference = EC6F460D2B18909E005A8176 /* DigginUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		EC9E4D592B57D884004B8CC3 /* DigginWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC9E4D702B57D886004B8CC3 /* Build configuration list for PBXNativeTarget "DigginWidgetExtension" */;
+			buildPhases = (
+				EC9E4D562B57D884004B8CC3 /* Sources */,
+				EC9E4D572B57D884004B8CC3 /* Frameworks */,
+				EC9E4D582B57D884004B8CC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DigginWidgetExtension;
+			productName = DigginWidgetExtension;
+			productReference = EC9E4D5A2B57D884004B8CC3 /* DigginWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -531,6 +629,9 @@
 					EC6F460C2B18909E005A8176 = {
 						CreatedOnToolsVersion = 14.3.1;
 						TestTargetID = EC6F45F22B18909D005A8176;
+					};
+					EC9E4D592B57D884004B8CC3 = {
+						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
 			};
@@ -555,6 +656,7 @@
 				EC6F45F22B18909D005A8176 /* Diggin */,
 				EC6F46022B18909E005A8176 /* DigginTests */,
 				EC6F460C2B18909E005A8176 /* DigginUITests */,
+				EC9E4D592B57D884004B8CC3 /* DigginWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -597,6 +699,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC9E4D582B57D884004B8CC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9E4D692B57D886004B8CC3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -606,6 +716,8 @@
 			files = (
 				EC6F463F2B18A67F005A8176 /* CustomNavigationBar.swift in Sources */,
 				EC6B75022B1DB534000D1FAA /* ChatViewModel.swift in Sources */,
+				EC9E4D102B56527A004B8CC3 /* TestViewModel.swift in Sources */,
+				EC9E4D6C2B57D886004B8CC3 /* DigginWidget.intentdefinition in Sources */,
 				ECCCE6CE2B1E287700310D1D /* DigginButtonView.swift in Sources */,
 				EC6F462B2B1891F2005A8176 /* OnboardingViewModel.swift in Sources */,
 				EC6F46412B18A69D005A8176 /* NavigationButtonType.swift in Sources */,
@@ -614,6 +726,7 @@
 				EC6B750C2B1DC563000D1FAA /* ChatObject.swift in Sources */,
 				ECCCE6D92B1E29D100310D1D /* ChatData.swift in Sources */,
 				EC6B750F2B1DC615000D1FAA /* ChatDBRepository.swift in Sources */,
+				EC9E4D0C2B5645F3004B8CC3 /* MusicKitRepositoryType.swift in Sources */,
 				EC2332CD2B1E32A50099A5BF /* CustomTabBarView.swift in Sources */,
 				EC6B75092B1DBE19000D1FAA /* KeyboardToolbar.swift in Sources */,
 				EC2332D72B2097250099A5BF /* WriteObject.swift in Sources */,
@@ -627,6 +740,7 @@
 				EC2332DB2B2099D10099A5BF /* MusicListViewModel.swift in Sources */,
 				EC6F46312B189CFA005A8176 /* Path.swift in Sources */,
 				EC6F463D2B18A2F5005A8176 /* Date+Extension.swift in Sources */,
+				EC9E4D0E2B565255004B8CC3 /* TestView.swift in Sources */,
 				EC6B75002B1DAFC3000D1FAA /* ChatView.swift in Sources */,
 				EC6F462F2B189B5A005A8176 /* PathType.swift in Sources */,
 				ECCCE6D22B1E294000310D1D /* ChatItemDirection.swift in Sources */,
@@ -661,6 +775,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC9E4D562B57D884004B8CC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9E4D6B2B57D886004B8CC3 /* DigginWidget.intentdefinition in Sources */,
+				EC9E4D642B57D884004B8CC3 /* DigginWidgetLiveActivity.swift in Sources */,
+				EC9E4D622B57D884004B8CC3 /* DigginWidgetBundle.swift in Sources */,
+				EC9E4D662B57D884004B8CC3 /* DigginWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -673,6 +798,11 @@
 			isa = PBXTargetDependency;
 			target = EC6F45F22B18909D005A8176 /* Diggin */;
 			targetProxy = EC6F460E2B18909E005A8176 /* PBXContainerItemProxy */;
+		};
+		EC9E4D6E2B57D886004B8CC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC9E4D592B57D884004B8CC3 /* DigginWidgetExtension */;
+			targetProxy = EC9E4D6D2B57D886004B8CC3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -796,6 +926,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ECCCE6C82B1E236300310D1D /* Config.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -831,6 +962,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ECCCE6C82B1E236300310D1D /* Config.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -938,6 +1070,62 @@
 			};
 			name = Release;
 		};
+		EC9E4D712B57D886004B8CC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RQHZUCMHSH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DigginWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DigginWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = seungchan.MusicDiary.DigginWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC9E4D722B57D886004B8CC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RQHZUCMHSH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DigginWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DigginWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = seungchan.MusicDiary.DigginWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -973,6 +1161,15 @@
 			buildConfigurations = (
 				EC6F461E2B18909E005A8176 /* Debug */,
 				EC6F461F2B18909E005A8176 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC9E4D702B57D886004B8CC3 /* Build configuration list for PBXNativeTarget "DigginWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9E4D712B57D886004B8CC3 /* Debug */,
+				EC9E4D722B57D886004B8CC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
